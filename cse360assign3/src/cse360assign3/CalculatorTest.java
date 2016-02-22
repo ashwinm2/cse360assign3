@@ -73,8 +73,15 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testgetHistory() {
-		fail("Not yet implemented");
+	public void testgetHistory () {
+		Calculator obj = new Calculator();
+		obj.add(15);
+		obj.subtract(6);
+		obj.multiply(2);
+		obj.divide(3);
+		assertEquals("The string must be 0 + 15 - 6 * 2 / 3","0 + 15 - 6 * 2 / 3",obj.getHistory());
+		//fail("Not yet implemented");
 	}
+	
 
 }

@@ -1,18 +1,17 @@
 package cse360assign3;
 
 /**
- * Second Version.
+ * Third and Final Version.
  * A Class to perform the basic function of a calculator such as
  * addition, subtraction, multiplication, division and
- * return the total.
- * 
+ * show the history of computation performed in a string format.
  * @author Ashwin Murthy PIN - 613  CSE360 Spring 2016
  *
  */
 public class Calculator {
 	
 	private int total; 
-	 
+	private String history = "0"; 
 	
 	/** Initializing the total to zero. */ 
 	public Calculator () {
@@ -32,8 +31,9 @@ public class Calculator {
 	 * @param Value to be added.
 	 */
 	public void add (int value) {
+		history += " + "; 
 		total = total + value;
-		
+		history += Integer.toString(value);
 	}
 	
 	
@@ -41,8 +41,9 @@ public class Calculator {
 	 * @param Value to be subtracted.
 	 */
 	public void subtract (int value) {
+		history += " - "; 
 		total = total - value;
-		
+		history += Integer.toString(value);
 	}
 	
 	
@@ -50,8 +51,9 @@ public class Calculator {
 	 * @param Value to be multiplied.
 	 */
 	public void multiply (int value) {
+		history += " * "; 
 		total = total * value;
-		
+		history += Integer.toString(value);
 	}
 	
 	
@@ -60,11 +62,12 @@ public class Calculator {
 	 * @param Value to be divided.
 	 */
 	public void divide (int value) {
-		 if( value != 0 )
+		history += " / "; 
+		if( value != 0 )
 			total = total / value;
 		else
 			total = 0;
-		
+		history += Integer.toString(value);
 	}
 	 
 	
@@ -72,7 +75,7 @@ public class Calculator {
 	 * @param none.
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 
 }
